@@ -1,8 +1,92 @@
 @base: #efefef;
 @netra_color:#4E8506;
 @the-border: 1px;
-@basefont:"tahoma";
+@basefont:"Arial";
 @baseImage:url('../images/bg.png');
+@width:960px;  
+@def_grid:16;
+///960G
+// Defining number of columns in the grid.
+// Common Values would be 12, 16 or 24
+
+  h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 10px 0;
+  font-family: inherit;
+  font-weight: bold;
+  line-height: 1;
+  color: inherit;
+  text-rendering: optimizelegibility;
+}
+
+h1 small,
+h2 small,
+h3 small,
+h4 small,
+h5 small,
+h6 small {
+  font-weight: normal;
+  line-height: 1;
+  color: #999999;
+}
+
+h1 {
+  font-size: 36px;
+  line-height: 40px;
+}
+
+h2 {
+  font-size: 30px;
+  line-height: 40px;
+}
+
+h3 {
+  font-size: 24px;
+  line-height: 40px;
+}
+
+h4 {
+  font-size: 18px;
+  line-height: 20px;
+}
+
+h5 {
+  font-size: 14px;
+  line-height: 20px;
+}
+
+h6 {
+  font-size: 12px;
+  line-height: 20px;
+}
+
+h1 small {
+  font-size: 24px;
+}
+
+h2 small {
+  font-size: 18px;
+}
+
+h3 small {
+  font-size: 14px;
+}
+
+h4 small {
+  font-size: 14px;
+}
+
+                                    
+.container(){    
+  clear:both;
+  margin:0 auto;
+  width:@width;
+}         
+                                      
 
 //common style
 .fixed{
@@ -155,6 +239,7 @@ html{
 }
 body{
     background:@baseImage repeat;
+    font-family:@basefont;
     margin:0;
     padding:0;
 }
@@ -162,11 +247,16 @@ body{
 #csi-header{
   font-family:@basefont;
   top:0;
-  .gradient();
+  background:#F8F8F8;
+  border-bottom:1px solid #E0E0E0;
+  .fixed();
+  .top-header{
+    margin:0 auto;
+   .container();/* This sets up the basic 960 Container for columns to use. */
+  }
   color:#fff;
   width:100%;
   height:48px;
-  margin-botton:35px;
   float:left;
 }
 #csi-container{
@@ -176,11 +266,96 @@ body{
   
 }
 #csi-slide{
+  padding-top:20px;
+  margin-top:48px;
+  background-color:#F0F0F0;
   width:100%;
-  min-height:500px;
   float:left;
-  background:#ff6600;
+  border-bottom:1px solid #E1E1E1;
+  border-top:1px solid #EBEBEB;
+  .container-slide{
+    margin:0 auto;
+    text-align:center;
+    margin-bottom:0;
+    img{
+      margin-top:20px;
+      margin-bottom:-4px;
+    }
+    h2{
+ color:#454545;
+ .text-shadow();
+      font-size:48px;
+      font-weight:bold;
+    }
+    .container();
+  }
 
+}
+#csi-main{
+  width:100%;
+  margin-top:20px;
+  float:left;
+      .main-content{
+        min-height:300px;
+        margin:0 auto;
+        .container();
+           .full-width{
+              width:100%;
+              float:left;
+              padding-bottom:20px;
+              border-bottom:1px dotted #ccc;
+                     .csi_text{
+                        width:700px;
+                        float:left;
+                        h2{
+                            color:#454545;
+                            font-size: 30px;
+                            margin-bottom: 20px;
+                            line-height:1.2em;
+                            letter-spacing: -1px;
+                          }
+                        }
+                     .csi-button-cta{
+                            width:260px;
+                            float:right;
+                             	 	  .csi-cta {
+                                        -moz-box-shadow:inset 0px 1px 0px 0px #caefab;
+                                        -webkit-box-shadow:inset 0px 1px 0px 0px #caefab;
+                                        box-shadow:inset 0px 1px 0px 0px #caefab;
+                                        background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #77d42a), color-stop(1, #5cb811) );
+                                        background:-moz-linear-gradient( center top, #77d42a 5%, #5cb811 100% );
+                                        filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#77d42a', endColorstr='#5cb811');
+                                        background-color:#77d42a;
+                                        -moz-border-radius:6px;
+                                        -webkit-border-radius:6px;
+                                        border-radius:6px;
+                                        border:1px solid #268a16;
+                                        display:inline-block;
+                                        color:#ffffff;
+                                        font-family:arial;
+                                        font-size:21px;
+                                        font-weight:bold;
+                                        padding:15px 24px;
+                                        text-decoration:none;
+                                        text-shadow:1px 1px 0px #242424;
+                                  }
+                                  .csi-cta:hover {
+                                    background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #5cb811), color-stop(1, #77d42a) );
+                                    background:-moz-linear-gradient( center top, #5cb811 5%, #77d42a 100% );
+                                    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#5cb811', endColorstr='#77d42a');
+                                    background-color:#5cb811;
+                                  }
+                                  .csi-cta:active {
+                                    position:relative;
+                                    top:1px;
+                                  }
+                          }
+              }
+              ////end of full width
+        
+      }
+      ///end of container
+  
 }
 #csi-footer{
   .top{}
